@@ -8,79 +8,61 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    -webkit-tap-highlight-color:transparent;
+margin:0;
+padding:0;
+box-sizing:border-box;
+-webkit-tap-highlight-color:transparent;
 }
 
 body{
-    font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Apple SD Gothic Neo",
-    sans-serif;
-
-    width:100vw;
-    height:100vh;
-    background:#ffffff;
-    overflow:hidden;
+font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;
+background:#ffffff;
+height:100vh;
 }
 
 .fab{
-    position:fixed;
-    right:24px;
-    bottom:34px;
-
-    width:56px;
-    height:56px;
-
-    border:none;
-    border-radius:999px;
-
-    background:#000;
-    color:#fff;
-
-    font-size:32px;
-    cursor:pointer;
+position:fixed;
+right:24px;
+bottom:34px;
+width:56px;
+height:56px;
+border:none;
+border-radius:999px;
+background:#000;
+color:#fff;
+font-size:32px;
+z-index:1000;
 }
 
 .menu{
-    position:fixed;
-    right:24px;
-    bottom:100px;
-
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-
-    opacity:0;
-    pointer-events:none;
-
-    transition:.2s;
+position:fixed;
+right:24px;
+bottom:100px;
+display:flex;
+flex-direction:column;
+gap:10px;
+opacity:0;
+pointer-events:none;
+transition:.2s;
 }
 
 .menu.show{
-    opacity:1;
-    pointer-events:auto;
+opacity:1;
+pointer-events:auto;
 }
 
 .menu a{
-    text-decoration:none;
-
-    background:white;
-    color:black;
-
-    border:1px solid #000;
-    border-radius:16px;
-
-    padding:12px 16px;
-
-    font-size:15px;
+text-decoration:none;
+color:#000;
+background:#fff;
+border:1px solid #000;
+border-radius:16px;
+padding:12px 16px;
 }
 
-.menu a:active{
-    opacity:.7;
+.menu a.active{
+background:#000;
+color:#fff;
 }
 </style>
 </head>
@@ -88,31 +70,20 @@ body{
 <body>
 
 <div class="menu" id="menu">
-
-    <a href="diary.html">
-        일기장
-    </a>
-
-    <a href="fun.html">
-        재밌겠다
-    </a>
-
-    <a href="message.html">
-        메세지 보내기
-    </a>
-
+<a href="index.html" class="active">홈</a>
+<a href="diary.html">일기장</a>
+<a href="fun.html">재밌겠다</a>
+<a href="message.html">메세지 보내기</a>
 </div>
 
-<button class="fab" id="fab">
-    +
-</button>
+<button class="fab" id="fab">+</button>
 
 <script>
-const fab = document.getElementById('fab');
-const menu = document.getElementById('menu');
+const fab = document.getElementById("fab");
+const menu = document.getElementById("menu");
 
-fab.addEventListener('click',()=>{
-    menu.classList.toggle('show');
+fab.addEventListener("click",()=>{
+menu.classList.toggle("show");
 });
 </script>
 
